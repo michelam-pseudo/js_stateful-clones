@@ -39,6 +39,8 @@ function transformStateWithClones(state, actions) {
             : (objectAction = { ...chainActions[chainActions.length - 1] });
         })();
 
+        keys = Object.keys(action.extraData);
+        
         for (let i = 0; i < keys.length; i++) {
           delete objectAction[keys[i]];
         }
